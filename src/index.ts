@@ -87,7 +87,7 @@ export function apply(ctx: Context, config: Config) {
       await ctx.database.remove('friendlinks', { id: cid })
       return `已删除友链：${link.name}`
     })
-  ctx.command('friendlink', '查看友链', { authority: 4 })
+  ctx.command('friendlink', '查看友链')
     .action(async ({ session }) => {
       const links = await ctx.database.select('friendlinks')
         .execute()
