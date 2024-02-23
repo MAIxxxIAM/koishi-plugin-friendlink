@@ -6,7 +6,7 @@
 使用QQ官方机器人MD的友链插件
 # ✨使用方式
 
-koishi插件市场中搜索mai-suangua，并安装
+koishi插件市场中搜索friendlink，并安装
 
 ## 配置设置
 - QQ官方bot+MD模板
