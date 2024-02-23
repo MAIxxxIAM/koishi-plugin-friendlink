@@ -1,6 +1,6 @@
-# koishi-plugin-mai-suangua
+# koishi-plugin-friendlink
 
-[![npm](https://img.shields.io/npm/v/koishi-plugin-mai-suangua?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-mai-suangua)
+[![npm](https://img.shields.io/npm/v/koishi-plugin-friendlink?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-friendlink)
 
 # 📚 描述
 使用QQ官方机器人MD的友链插件
