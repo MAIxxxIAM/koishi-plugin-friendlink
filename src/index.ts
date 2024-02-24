@@ -4,7 +4,7 @@ import util from 'util'
 export const name = 'friendlink'
 export const inject = ['database']
 
-export const usage=`
+export const usage = `
 
 # 添加友情链接方式
   ## 1)addlink <name> <url>
@@ -63,12 +63,12 @@ export function apply(ctx: Context, config: Config) {
   })
 
   ctx.middleware(async (session, next) => {
-    const { content, type} = session
+    const { content, type } = session
     if (!content.includes('点击链接了解机器人详情')) return next()
-    const link=content.match(/https:\/\/\S+/)
-    const name=content.match(/【(.*?)】/)
+    const link = content.match(/https:\/\/\S+/)
+    const name = content.match(/【(.*?)】/)
     session.execute(`addlink ${name[1]} ${link[0]}`)
-    
+
   })
 
   ctx.command('addlink <name> <url>', '添加友链', { authority: 4 })
@@ -123,15 +123,13 @@ export function apply(ctx: Context, config: Config) {
     // const line=length%5
     for (let i = 0; i < length; i++) {
       buttonList.push(urlbutton(2, links[i].name, links[i].url, serId, links[i].id))
-      const line = length % config.length
-      const last = length - line
       if (buttonList.length == config.length) {
         rowList.push({
           "buttons": buttonList
         })
         buttonList = []
       }
-      if (i>=last) {
+      if (i == length - 1) {
         rowList.push({
           "buttons": buttonList
         })
@@ -145,7 +143,8 @@ export function apply(ctx: Context, config: Config) {
       "id": String(c),
       "render_data": {
         "label": a,
-        "visited_label":a
+        "visited_label": a,
+        "style": 1
       },
       "action": {
         "type": 0,
